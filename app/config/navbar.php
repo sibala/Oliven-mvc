@@ -13,13 +13,43 @@ return [
 
         // This is a menu item
         'home'  => [
-            'text'  => 'Home',
+            'text'  => 'Hem',
             'url'   => $this->di->get('url')->create(''),
             'title' => 'Home route of current frontcontroller'
         ],
- 
+ 		'thread'  => [
+            'text'  => 'Frågor',   
+            'url'   => $this->di->get('url')->create('threads'),  
+            'title' => 'Frågor',
+        ],
+        'tags'  => [
+            'text'  => 'Taggar',   
+            'url'   => $this->di->get('url')->create('tags'),
+            'title' => 'taggar',
+        ],		
+        'users'  => [
+            'text'  => 'Användare',   
+            'url'   => $this->di->get('url')->create('users'),
+            'title' => 'Användare',
+        ],
+		'about'  => [
+            'text'  => 'Om oss',   
+            'url'   => $this->di->get('url')->create('about'), 
+            'title' => 'Om oss',
+        ],
+		'ask'  => [
+            'text'  => 'Ställ en fråga',   
+            'url'   => $this->di->get('url')->create('ask'), 
+            'title' => 'Ställ en fråga',
+        ],
+		'source'  => [
+            'text'  => 'Källkod',   
+            'url'   => $this->di->get('url')->create('source'),  
+            'title' => 'Källkod',
+        ],
         // This is a menu item
-        'test'  => [
+        /*
+		'test'  => [
             'text'  => 'Submenu',
             'url'   => $this->di->get('url')->create('submenu'),
             'title' => 'Submenu with url as internal route within this frontcontroller',
@@ -67,7 +97,7 @@ return [
             'text'  =>'About',
             'url'   => $this->di->get('url')->create('about'),
             'title' => 'Internal route within this frontcontroller'
-        ],
+        ],*/
     ],
  
 

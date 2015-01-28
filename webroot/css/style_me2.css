@@ -1,0 +1,300 @@
+/**
+ * General elements
+ */
+
+@import url(figure.css);
+
+body {
+  color: #333;
+  font-family: arial, sans-serif;
+  overflow-y: scroll;
+
+}
+
+h1 {
+  font-size: 2.2em;
+  color: #333;
+}
+a {
+  color: #654321;
+  font-size: 1.1em;
+  text-decoration: none;
+}
+a:hover{
+   color: #B8A92A;
+}
+/**
+ * Layout of the main page elements 
+ */
+#wrapper {
+  width:960px;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+
+/**
+ * Layout for header
+ */
+#header {
+  /*background: #3F2860;*/
+  position: relative;
+  min-height: 150px;
+
+}
+.sitelogo {
+  position: absolute;
+  top: 6px;
+  left: 20px;
+  width: 200px;
+  height: 85px;
+}
+.sitetitle {
+  position: absolute;
+  top: 6px;
+  left: 250px;
+  font-size: 48px;
+  color: #B2A92A;
+  text-shadow: 2px 2px #333;
+}
+
+.siteslogan {
+  position: absolute;
+  top: 65px;
+  left: 250px;
+  font-style: italic;
+  color: #000;
+}
+.login {
+  float:right;
+}
+
+
+/**
+ * Layout for main
+ */
+#main {
+
+  min-height: 20em;
+  padding-left: 100px;
+  padding-right: 200px;
+  background-color: #FFFFFF; 
+
+}
+
+
+/**
+ * Layout for footer
+ */
+#footer {
+  background: -webkit-linear-gradient( #433E26, #222); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient( #433E26, #222); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient( #433E26, #222); /* For Firefox 3.6 to 15 */
+  background: linear-gradient( #433E26, #222); /* Standard syntax */
+  background-color: #433E26;
+  border-top: 1px solid #ccc;
+  border-radius: 4px;
+  padding-top: 22px;
+  padding-bottom: 5px;
+  margin-top: 22px;
+  color: #fff;
+  text-align:center;
+  min-height:100px;
+}
+
+#footer a {
+ color: #EF6D3B;
+}
+
+.sitefooter {
+
+}
+
+
+/**
+ * For articles
+ */
+.article1 {
+  width: 700px;
+  padding-right: 200px;
+  padding-bottom: 1em;
+
+}
+#source h1{
+	padding-bottom: 16px;
+}
+.article1 h1,
+.article1 h2 {
+	padding-top: 32px;
+}
+
+.byline {
+  width: 900px;
+  margin-top: 34px;
+  border-top: 1px dashed #666;
+  padding-top: 22px;
+  color: #777;
+  font-family: arial, sans;
+  font-style: italic;
+}
+
+.byline p {
+  margin-top: 0;
+}
+
+.comment-form{
+  padding-top:30px;
+  font-size:0.8em;
+}
+.gravatar{
+	height: 20%;
+	width: 2px;
+}
+.time{
+  color: grey;
+}
+.question-content{
+}  
+
+.item{
+  border-top: 1px dotted black;
+  padding-bottom:10px;
+  padding-top:10px;
+}
+
+.item:nth-child(even) {
+    background-color: #EEEEEE;
+}
+
+.item:last-child {
+    border-bottom: 1px dotted black;
+}
+
+.item img{
+  float:left;
+  padding-right:5px;
+  padding-bottom:3px;
+}
+
+.item section{
+  padding-left:45px;
+}
+
+.item span#name{
+  color:blue;
+}
+
+.item  span#timePosted{
+  color:grey;
+}
+.user-info{
+  width:47%;
+  border: 1px solid #999;
+  padding-bottom:10px;
+  padding-top:10px;
+  padding-left:10px;
+  margin-right:7px;
+  margin-bottom:7px;
+}
+.user-info img{
+  padding-right:5px;
+  padding-bottom:3px;
+}
+.users-question{
+  /*background-color: #E8E5D4;*/
+  float:right;
+  width:47%;
+  padding-bottom:10px;
+  padding-top:10px;
+  padding-left:10px;
+  margin-right:7px;
+  margin-bottom:7px;
+}
+.users-question img{
+  float:left;
+  padding-right:5px;
+  padding-bottom:3px;
+}
+.active-user-list{
+  box-shadow: 0px 0px 2px #999;
+  border: 1px solid #999;
+  width:47%;
+  padding-bottom:10px;
+  padding-top:10px;
+  padding-left:10px;
+  margin-right:7px;
+  margin-bottom:7px;
+}
+
+.active-user-list img{
+  float:left;
+  padding-right:5px;
+  padding-bottom:3px;
+}
+.user-list {
+  /*background-color: #E8E5D4;*/
+  box-shadow: 0px 0px 2px #999;
+  border: 1px solid #999;
+  float:left;
+  width:47%;
+  padding-bottom:10px;
+  padding-top:10px;
+  padding-left:10px;
+  margin-right:7px;
+  margin-bottom:7px;
+}
+
+.user-list img{
+  float:left;
+  padding-right:5px;
+  padding-bottom:3px;
+}
+
+.user-list section{
+  padding-left:45px;
+}
+
+.user-list span#name{
+  color:blue;
+}
+
+.user-list  span#timePosted{
+  color:grey;
+}
+
+a.tag-list:hover {
+  text-decoration: none;
+  color: #B8A92A; 
+}
+
+a.tag-list span:hover {
+  text-decoration: none;
+  color: #B8A92A; 
+  border: 1px solid #B8A92A;
+  box-shadow: 0px 0px 3px #B8A92A;
+}
+
+a.tag-list span {
+  box-shadow: 0px 0px 3px #999;
+  border: 1px solid #999;
+  padding-bottom:5px;
+  padding-top:7px;
+  padding-left:7px;
+  padding-right:7px;
+  margin-right:9px;
+  margin-bottom:9px;
+}
+
+
+
+div .question-list {
+  box-shadow: 0px 0px 3px #999;
+  min-height: 80px;
+  border: 1px solid #999;
+  padding-bottom:5px;
+  padding-top:7px;
+  padding-left:20px;
+  padding-right:7px;
+  margin-right:9px;
+  margin-bottom:9px;
+}

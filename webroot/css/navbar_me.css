@@ -7,7 +7,7 @@
 }
 
 .navbar {
-  background-color: #eee;
+  background-color: white;
   border-radius: 4px;
 }
  
@@ -19,8 +19,9 @@
  
 .navbar li {
   display: inline-block;
-  border-top: 4px solid transparent; 
+  box-shadow: 3px 3px 2px #999;
   color: #333; 
+  font-weight:bold;
   position: relative; 
 }
  
@@ -34,15 +35,13 @@
 }
 
 .navbar li:hover {
-  color: #666; 
-  border-color: #666;
-  background-color: #ddd;
+  color: #B8A92A; 
 } 
  
 .navbar li.selected-parent, 
 .navbar li.selected {
-  color: #222; 
-  border-color: #222;
+  color: #B8A92A; 
+    box-shadow: 3px 3px 2px #999;
 }
 
 .navbar ul ul {

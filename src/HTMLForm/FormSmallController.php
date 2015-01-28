@@ -25,7 +25,7 @@ class FormSmallController
         $form->check();
 
         $this->di->theme->setTitle("Testing CForm with Anax");
-        $this->di->views->add('default/page', [
+        $this->di->views->add('users/user-form', [
             'title' => "Try out a form using CForm",
             'content' => $form->getHTML()
         ]);

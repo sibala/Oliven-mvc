@@ -14,6 +14,9 @@
         }
     ],
     "require": {
+		"phpmvc/comment": "dev-master",
+		"mos/cform": "2.*@dev",
+		"mos/cdatabase": "dev-master",
         "php": ">=5.4"
     },
     "require-dev": {
