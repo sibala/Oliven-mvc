@@ -19,6 +19,12 @@ $di->set('TestController', function () use ($di) {
 });
 
 
+$di->set('fails', function () {
+    throw new \Exception("Custom exception thrown by callback creating service.");
+});
+
+
+
 class TestController
 {
     use \Anax\DI\TInjectable;
@@ -51,6 +57,10 @@ class TestController
                     'text' => "Forward to existing, but private, action",
                 ],
                 [
+                    'href' => $this->url->create('test/forward-protected'),
+                    'text' => "Forward to existing, but protected, action",
+                ],
+                [
                     'href' => $this->url->create('test/no-di-call'),
                     'text' => "Using TInjectable forgot to set \$di, accessing session() via __call()",
                 ],
@@ -65,6 +75,14 @@ class TestController
                 [
                     'href' => $this->url->create('test/no-such-service-method'),
                     'text' => "Using TInjectable - no such property, accessing session1 via __get()",
+                ],
+                [
+                    'href' => $this->url->create('test/create-service-fails-with-exception'),
+                    'text' => "Loading service in service container but throws exception during load.",
+                ],
+                [
+                    'href' => $this->url->create('test/headers-already-sent'),
+                    'text' => "Headers are already sent.",
                 ],
             ]
         ]);
@@ -95,6 +113,27 @@ class TestController
     private function privateAction()
     {
         ;
+    }
+
+    protected function protectedAction()
+    {
+        ;
+    }
+
+    public function forwardProtectedAction()
+    {
+        $this->dispatcher->forward(['controller' => 'test', 'action' => 'protected']);
+    }
+
+    public function createServiceFailsWithExceptionAction()
+    {
+        $this->fails();
+    }
+
+    public function headersAlreadySentAction()
+    {
+        echo "Simulating output";
+        $this->response->redirect("http://example.com");
     }
 }
 

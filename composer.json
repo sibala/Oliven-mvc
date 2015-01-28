@@ -21,5 +21,8 @@
     },
     "require-dev": {
         "satooshi/php-coveralls": "dev-master"
+    },
+    "autoload": {
+        "psr-4": { "Anax\\": "src/" }
     }
 }
