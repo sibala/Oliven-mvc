@@ -41,12 +41,12 @@ return [
             'text'  => 'Ställ en fråga',   
             'url'   => $this->di->get('url')->create('ask'), 
             'title' => 'Ställ en fråga',
-        ],
+        ],/*
 		'source'  => [
             'text'  => 'Källkod',   
             'url'   => $this->di->get('url')->create('source'),  
             'title' => 'Källkod',
-        ],
+        ],*/
         // This is a menu item
         /*
 		'test'  => [

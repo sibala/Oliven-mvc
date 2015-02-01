@@ -28,7 +28,7 @@ class CFormQuestion extends \Mos\HTMLForm\CForm
             ],
 			'tags' => [
                 'type'        => 'text',
-                'label'       => 'Taggar',
+                'label'       => 'Taggar Obs! Separera flera taggar med kommatecken ","',
                 'required'    => true,
                 'validation'  => ['not_empty'],
             ],

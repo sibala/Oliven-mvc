@@ -1,12 +1,19 @@
 <h1><?=$title?>: <?=$question[0]->headline?></h1>
 <div class="question-list" >
+	<div style="float:left;padding-top:10px;">
+	<a class="arrow-up" href="<?=$this->url->create('threads/questionUppvote/' . $question[0]->rank . "/" . $question[0]->id) ?>"></a><br/>
+	<?=$question[0]->rank?><br />
+	<a class="arrow-down" href="<?=$this->url->create('threads/questionDownvote/' . $question[0]->rank . "/" .  $question[0]->id) ?>"></a><br/>
+	
+	</div>
+
 	<span class="users-question">
 		<?=$this->di->UsersController->get_gravatar($question[0]->userEmail);?>
 		AV <a href="<?=$this->url->create('users/view/' . $question[0]->userId) ?>"><?=$question[0]->userAcronym?></a><br/>
 		Frågan skapades: <?=$question[0]->timestamp?>
 		<?php //echo $user->getProperties()["popularUsers"]?>
 	</span>
-	<p class="question-content">
+	<div class="question-content">
 		<br /><?=$question[0]->content?>
 		<br /><br />
 		<?php if(isset($tags)): ?>
@@ -14,7 +21,7 @@
 					echo "<a class='tag-list' href=". $this->url->create('threads/tagged/' . $tag->id). "><span>" . $tag->tag."</span></a> ";
 				}
 		?>
-	</p>
+	</div>
 	<?php endif; ?>
 	<div class='comment-form'>
 	<?php if($this->session->get("userID") !== null): ?>
@@ -45,7 +52,12 @@
 
 <?php foreach($answers as $answer){ ?>
 <div class="question-list" >
-	<p class="question-content">
+	<div style="float:left;padding-top:10px;">
+	<a class="arrow-up" href="<?=$this->url->create('threads/questionUppvote/' . $answer->rank . "/" . $answer->thread_id) ?>"></a><br/>
+	<?=$answer->rank?><br />
+	<a class="arrow-down" href="<?=$this->url->create('threads/questionDownvote/' . $answer->rank . "/" .  $answer->thread_id) ?>"></a><br/>
+	</div>
+	<div class="question-content">
 		<span class="users-question">
 			<?=$this->di->UsersController->get_gravatar($answer->email);?>
 			AV <a href="<?=$this->url->create('users/view/' . $answer->userId) ?>"><?=$answer->acronym?></a><br/>
@@ -53,7 +65,7 @@
 			<?php //echo $user->getProperties()["popularUsers"]?>
 		</span>
 		<td><?=$answer->getProperties()["content"]?></td>
-	</p>
+	</div>
 	
 	<div class='comment-form'>
 	<?php if($this->session->get("userID") !== null): ?>

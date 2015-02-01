@@ -9,7 +9,8 @@
 			<?php //echo $user->getProperties()["popularUsers"]?>
 		</span>
 		<a href="<?=$this->url->create('threads/view/' . $question->id) ?>"><?=$question->headline?></a>
-		<br /><?php echo  $question->answerCount ? $question->answerCount . " svar" : "0 svar";?>
+		<br /><?php echo  $question->answerCount ? $question->answerCount . " svar" : "0 svar";?> |
+		<?php echo  $question->rank ? $question->rank . " rank" : "0 rank";?>
 		<br /><br />
 		<?php if(isset($tags)): ?>
 			<?php foreach($tags as $tag){

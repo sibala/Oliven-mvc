@@ -55,6 +55,7 @@ class ThreadsController implements \Anax\DI\IInjectionAware
 					t1.headline AS headline, 
 					t1.content AS content, 
 					t1.timestamp AS timestamp, 
+					t1.rank AS rank,
 					u.id AS userId,
 					u.acronym AS userAcronym,
 					u.email AS userEmail,
@@ -139,6 +140,36 @@ class ThreadsController implements \Anax\DI\IInjectionAware
 
     }
 	
+	public function questionUppvoteAction($rank, $id = null)
+    {
+		if(isset($rank)){
+			$rank++;
+		} else {
+			$rank = 1;
+		}
+		$this->threads->save([
+				'id' => $id,
+				'rank' => $rank
+		]);
+		$url = $this->threads->url->create($_SERVER['HTTP_REFERER']);
+		$this->threads->response->redirect($url);
+	}
+	
+	public function questionDownvoteAction($rank, $id = null)
+    {
+		if(isset($rank)){
+			$rank--;
+		} else {
+			$rank = -1;
+		}
+		$this->threads->save([
+				'id' => $id,
+				'rank' => $rank
+		]);
+		$url = $this->threads->url->create($_SERVER['HTTP_REFERER']);
+		$this->threads->response->redirect($url);
+	}
+	
 	public function viewAction($id = null)
     {
 		$params = [$id];
@@ -146,6 +177,7 @@ class ThreadsController implements \Anax\DI\IInjectionAware
 					t1.headline AS headline, 
 					t1.content AS content, 
 					t1.timestamp AS timestamp, 
+					t1.rank AS rank,
 					u.id AS userId,
 					u.acronym AS userAcronym,
 					u.email AS userEmail", "t1")
@@ -168,7 +200,7 @@ class ThreadsController implements \Anax\DI\IInjectionAware
 		$thread_id =$question[0]->id;
 		
 		$params = [$thread_id];
-		$answers = $this->threads->query("u.id AS userId, u.email AS email, u.acronym AS acronym, t.id AS thread_id, t.timestamp, t.content", "t")
+		$answers = $this->threads->query("u.id AS userId, u.email AS email, u.acronym AS acronym, t.id AS thread_id, t.rank AS rank, t.timestamp, t.content", "t")
 			->join("user AS u","u.id = t.user_id")
 			->where("parent_id = ?")
 			->execute($params);

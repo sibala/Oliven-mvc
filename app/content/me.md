@@ -1,3 +1,4 @@
 ###Välkommen till forumet.
 
-Jag skall visa  er mitt lilla form som är knappast redo för livesättning. Men förhoppningsvis så tar man med sig det man har lärt sig i denna kurs.
+
+Detta forum handlar om oliver och olivoljor. Diskutera de olika olivsorterna och tippsa gärna om din favorit

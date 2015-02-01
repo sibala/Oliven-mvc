@@ -144,6 +144,8 @@ a:hover{
 
 .comment-form{
   padding-top:30px;
+  padding-bottom:10px;
+  padding-left:60px;
   font-size:0.8em;
 }
 .gravatar{
@@ -153,8 +155,6 @@ a:hover{
 .time{
   color: grey;
 }
-.question-content{
-}  
 
 .item{
   border-top: 1px dotted black;
@@ -200,13 +200,16 @@ a:hover{
   padding-right:5px;
   padding-bottom:3px;
 }
+.question-content{
+	padding-left:60px;
+}
 .users-question{
   /*background-color: #E8E5D4;*/
   float:right;
-  width:47%;
+  width:40%;
   padding-bottom:10px;
   padding-top:10px;
-  padding-left:10px;
+  padding-left:30px;
   margin-right:7px;
   margin-bottom:7px;
 }
@@ -297,4 +300,34 @@ div .question-list {
   padding-right:7px;
   margin-right:9px;
   margin-bottom:9px;
+}
+
+.arrow-up {
+position: relative;
+top:-20px;
+left:-10px;
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 0 15px 15px 15px;
+border-color: transparent transparent #D4CA43 transparent;
+}
+.arrow-up:hover {
+
+border-color: transparent transparent #666 transparent;
+}
+.arrow-down {
+position: relative;
+top:20px;
+left:-10px;
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 15px 15px 0 15px;
+border-color: #8B3333 transparent transparent  transparent;
+}
+
+.arrow-down:hover {
+
+border-color: #666 transparent transparent transparent;
 }

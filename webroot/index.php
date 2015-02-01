@@ -107,7 +107,7 @@ $app->router->add('about', function() use ($app) {
         'byline' => $byline,
     ]);
 });
-
+/*
 $app->router->add('source', function() use ($app) {
  
     $app->theme->addStylesheet('css/source.css');
@@ -124,6 +124,6 @@ $app->router->add('source', function() use ($app) {
     ]);
  
 });
-
+*/
 $app->router->handle();
 $app->theme->render();
