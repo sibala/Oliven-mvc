@@ -1,6 +1,6 @@
 Oliven-MVC
 =========
-Oliven is a forum created in a school project at BTH. 
+Oliven is a forum about olivs and olivoils, created in a school project at BTH. 
 The forum was built with ANAX, a PHP-based and MVC-inspired (micro) framework ceated by the course teacher Mikael Roos.
 
 
@@ -8,6 +8,7 @@ Installation
 ------------------
 
 Install your own copy by using:
+
 ```git clone https://github.com/sibala/Oliven-mvc.git```
 
 
