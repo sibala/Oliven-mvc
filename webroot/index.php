@@ -96,15 +96,21 @@ $app->router->add('ask', function() use ($app) {
     ]);
 });
 $app->router->add('about', function() use ($app) {
- 	$content = $app->fileContent->get('me.md');
-	$content = $app->textFilter->doFilter($content, 'shortcode, markdown');
+
+ 	$olivs = $app->fileContent->get('olivs.md');
+	$olivs = $app->textFilter->doFilter($olivs, 'shortcode, markdown');
+	
+ 	$me = $app->fileContent->get('me.md');
+	$me = $app->textFilter->doFilter($me, 'shortcode, markdown');
 	
 	$byline = $app->fileContent->get('byline.md');
     $byline = $app->textFilter->doFilter($byline, 'shortcode, markdown');
- 
+	$app->theme->setTitle("Välkomment till forumet");
     $app->views->add('me/me', [
-        'content' => $content,
+        'olivs' => $olivs,
+        'me' => $me,
         'byline' => $byline,
+		'title' => "Välkomment till forumet",
     ]);
 });
 /*

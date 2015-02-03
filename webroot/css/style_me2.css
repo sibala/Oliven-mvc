@@ -114,12 +114,7 @@ a:hover{
 /**
  * For articles
  */
-.article1 {
-  width: 700px;
-  padding-right: 200px;
-  padding-bottom: 1em;
 
-}
 #source h1{
 	padding-bottom: 16px;
 }
@@ -129,7 +124,7 @@ a:hover{
 }
 
 .byline {
-  width: 900px;
+  width: 700px;
   margin-top: 34px;
   border-top: 1px dashed #666;
   padding-top: 22px;

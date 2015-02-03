@@ -1,6 +1,10 @@
+<h1><?=$title?></h1>
 <article class="article1">
 
-<?=$content?>
+
+<?=$olivs?>
+<br />
+<?=$me?>
 
 <?php if(isset($byline)) : ?>
 <footer class="byline">
