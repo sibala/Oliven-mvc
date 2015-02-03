@@ -83,6 +83,7 @@ class CFormQuestion extends \Mos\HTMLForm\CForm
 			'content' => $content,
 			'thread_type' => 0,
 			'user_id' => $this->di->session->get("userID", []),
+			'timestamp' => date( 'Y-m-d H:i:s' , time() ),
 		]);
 			
 		$result = $question->query("id")
@@ -100,7 +101,7 @@ class CFormQuestion extends \Mos\HTMLForm\CForm
 		foreach($tags as $t){
 			$tag = new \Anax\Tags\Tag();
 			$tag->setDI($this->di);
-			$params = [$t];
+			$params = [trim($t)];
 			$result = $tag->query('id')
 						->where("tag = ?")
 						->execute($params);

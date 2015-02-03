@@ -65,36 +65,17 @@ class CFormAnswer extends \Mos\HTMLForm\CForm
 		
 		$question = new \Anax\Threads\Thread();
 		$question->setDI($this->di);
-		/*
-		if($this->Value('id')!==''){
-			$user->save([
-				'id' => $this->Value('id'),
-				'acronym' => $this->Value('acronym'),
-				'email' => $this->Value('email'),
-				'name' =>  $this->Value('name'),
-				'password' => password_hash( $this->Value('password'), PASSWORD_BCRYPT),
-				'updated' => $now
-			]);
-			$url = $user->url->create('users/update/' . $user->id);
-			$user->response->redirect($url);
-		} else {*/
-			$question->save([
-				'content' => $content,
-				'parent_id' => $this->Value('parent_id'),
-				'thread_type' => 1,
-				'user_id' => $this->di->session->get("userID", []),
-			]);
-			$url = $question->url->create('threads/view/' . $this->Value('parent_id'));
-			$question->response->redirect($url);
-		//}
-		
 
-        // $this->AddOutput("<p><i>DoSubmit(): Form was submitted. Do stuff (save to database) and return true (success) or false (failed processing form)</i></p>");
-        // $this->AddOutput("<p><b>Username: " . $this->Value('username') . "</b></p>");
-        // $this->AddOutput("<p><b>Email: " . $this->Value('email') . "</b></p>");
-        // $this->AddOutput("<p><b>Name: " . $this->Value('name') . "</b></p>");
-        // $this->saveInSession = true;
-        // return true;
+		$question->save([
+			'content' => $content,
+			'parent_id' => $this->Value('parent_id'),
+			'thread_type' => 1,
+			'user_id' => $this->di->session->get("userID", []),
+			'timestamp' => date( 'Y-m-d H:i:s' , time() ),
+		]);
+		$url = $question->url->create('threads/view/' . $this->Value('parent_id'));
+		$question->response->redirect($url);
+
     }
 
 

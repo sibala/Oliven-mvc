@@ -63,6 +63,8 @@ class CFormComment extends \Mos\HTMLForm\CForm
     public function callbackSubmit()
     {
 		
+		$now = date( 'Y-m-d H:i:s' , time());
+		
 		$filter = new \Anax\Content\CTextFilter();
 		$filter->setDI($this->di);
 		$content = $filter->doFilter($this->Value('content'), 'markdown');
@@ -85,6 +87,7 @@ class CFormComment extends \Mos\HTMLForm\CForm
 			$comment->save([
 				'content' => $content,
 				'thread_id' => $this->Value('thread_id'),
+				'timestamp' => $now,
 			]);
 			$url = $comment->url->create('threads/view/' . $this->Value('thread_id'));
 			$comment->response->redirect($url);
